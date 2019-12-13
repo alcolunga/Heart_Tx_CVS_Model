@@ -12,9 +12,15 @@ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH RE
 
 Intro:
 
-This repository contains a MATLAB code for a mathematical model to analyze RHC deidentified data from patient electronic health records. The example code is inspired by a previously published cardiovascular systems-level model (Smith et al., 2004), ignoring the influence of right and left ventricular interaction, as well as omitting the influence of inheritance of blood flowing through the four heart valves.
+This repository contains a MATLAB code for a mathematical model to analyze RHC deidentified data from patient electronic health records. The example code ignores the influence of right and left ventricular interaction, and omits the influence of inheritance of blood flowing through the four heart valves.
 
-.m File Description:
+To run the model open DriverBasic.m:
+- DriverBasic loads the patient data and runs load_global.m using the data in order to set the nominal parameter              	values and initial conditions of the system. 
+- The optimized parameters may be loaded and substituted into the nominal parameter set
+- Using the desired parameter set (nominal vs. nominal w/ opt parameters) solve the ode using dXdT.m 
+- Plots the six-panel figure comparing computed pressures and volumes to data.
+
+File Descriptions:
 
 Patient233.m: This file contains the RHC data for Patient 233
 
@@ -23,7 +29,5 @@ DriverBasic.m: Calls load_global.m and solves the ODE using dXdT.m and computes 
 load_global.m: Set nominal parameters, initial conditions, and upper and lower bounds of ODE model
 
 dXdT.m: This function contains the algebraic and differential expressions that describe the cardiovascular system and model
-
-.mat File Description:
 
 results_opt.mat: optimized parameter values for Patient 233
