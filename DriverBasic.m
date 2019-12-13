@@ -68,9 +68,9 @@ pars = exp(gPars.pars); %Exponentiate the log-scaled nominal parameter values
 % $ parameter set and exponentiate.
 % % To load uncomment the following three lines
 
-load results_opt.mat xopt 
-INDMAP  = [6 11 13 14 15 16 18 22];
-pars(INDMAP) = exp(xopt)
+%load results_opt.mat xopt 
+%INDMAP  = [6 11 13 14 15 16 18 22];
+%pars(INDMAP) = exp(xopt)
 
 % Set up simulation time 
 dt = 0.001;                                % Solution is displayed at time-step dt = 0.001
